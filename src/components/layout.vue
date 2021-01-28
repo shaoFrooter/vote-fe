@@ -39,7 +39,7 @@
       },
       methods:{
         logout(){
-          this.$axios.post('/index.php/vote/logout').then(response=>{
+          this.$axios.post('/vote/logout').then(response=>{
             let code=response.data.code;
             if(code===200){
               //删除localStorage
