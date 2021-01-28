@@ -75,6 +75,8 @@ router.beforeEach((to,from,next)=>{
     let userData=JSON.parse(localStorage.getItem('userData'));
     if(userData===null||userData===''){
       next('/login');
+    }else if(toPath==='/'){
+      next('/avi/vote/voteList');
     }else{
       next();
     }
