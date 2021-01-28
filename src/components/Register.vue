@@ -16,7 +16,7 @@
       <el-input v-model="ruleForm.passwdCheck" type="password"></el-input>
     </el-form-item>
     <el-form-item class="register-el-form-item">
-      已有账号？<el-link type="primary" href="/#/login" style="margin-right: 30px">登录</el-link>
+      已有账号？<el-link type="primary" href="/login" style="margin-right: 30px">登录</el-link>
       <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
       <el-button @click="resetForm('ruleForm')">重置</el-button>
     </el-form-item>
