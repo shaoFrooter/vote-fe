@@ -3,7 +3,7 @@ import axios from 'axios'
 axios.interceptors.response.use(response=>{
   let code=response.data.code;
   if(code===401) {
-    location.replace('#/login');
+    location.replace('/login');
     return response;
   }
   if(code===200){
