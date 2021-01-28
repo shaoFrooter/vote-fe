@@ -132,8 +132,9 @@
             });
           }else{
             this.tableData[index].voted=false;
+            let msg=response.data.message;
             this.$message({
-              message:'投票失败',
+              message:msg,
               type:'warning'
             });
           }
