@@ -67,7 +67,13 @@
                       message:'登录成功',
                       type:'success'
                     });
-                    this.$store.commit('setUserData',data);
+                    let localStorageData={
+                      id:data.id,
+                      nickName:data.nickName,
+                      email:data.email,
+                      expireTime:new Date().getTime()
+                    };
+                    this.$store.commit('setUserData',localStorageData);
                     this.$router.push({name: 'voteList'});
                   }
                 });

@@ -75,10 +75,19 @@ router.beforeEach((to,from,next)=>{
     let userData=JSON.parse(localStorage.getItem('userData'));
     if(userData===null||userData===''){
       next('/login');
-    }else if(toPath==='/'){
-      next('/avi/vote/voteList');
-    }else{
-      next();
+    }else {
+      let expireTime = userData.expireTime;
+      let timeDiff = new Date().getTime() - expireTime-10000;
+      if (timeDiff > 24*60 * 60 * 1000) {
+        localStorage.removeItem('userData');
+        next('/login');
+      }else {
+        if (toPath === '/') {
+          next('/avi/vote/voteList');
+        } else {
+          next();
+        }
+      }
     }
   }
 });
